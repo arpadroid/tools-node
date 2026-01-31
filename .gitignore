@@ -3,5 +3,6 @@ junit.xml
 /coverage
 bundle-stats.html
 /dist
+/.tmp
 .tsbuildinfo
 storybook-static/

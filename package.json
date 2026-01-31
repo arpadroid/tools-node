@@ -2,7 +2,10 @@
     "name": "@arpadroid/tools-node",
     "version": "0.0.1",
     "description": "JavaScript utilities for NodeJS",
-    "exports": "./src/index.js",
+    "exports": {
+        ".": "./src/index.js"
+    },
+    "types": "./dist/@types/types.compiled.d.ts",
     "type": "module",
     "files": [
         "src/",
@@ -41,9 +44,10 @@
     },
     "homepage": "https://github.com/arpadroid/tools-node#readme",
     "dependencies": {
-        "jest-junit": "^16.0.0"
+        "http": "^0.0.1-security"
     },
     "devDependencies": {
+        "jest-junit": "^16.0.0",
         "@babel/preset-env": "^7.23.9",
         "@eslint/js": "^9.39.1",
         "@jest/globals": "^30.2.0",
