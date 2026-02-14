@@ -5,7 +5,7 @@
     "exports": {
         ".": "./src/index.js"
     },
-    "types": "./dist/@types/types.compiled.d.ts",
+    "types": "./dist/@types/index.d.ts",
     "type": "module",
     "files": [
         "src/",
@@ -25,7 +25,8 @@
         "prepublishOnly": "npm run test && npm run lint && npm run build",
         "test:coverage": "jest --coverage",
         "test:watch": "jest --watch",
-        "test": "jest"
+        "test": "jest",
+        "build": "tsc"
     },
     "repository": {
         "type": "git",
@@ -57,6 +58,7 @@
         "eslint": "^9.39.1",
         "globals": "^17.0.0",
         "jest": "^30.2.0",
-        "prettier": "^3.7.4"
+        "prettier": "^3.7.4",
+        "typescript": "^5.9.3"
     }
 }

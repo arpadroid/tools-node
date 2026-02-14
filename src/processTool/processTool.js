@@ -1,5 +1,10 @@
 /* eslint-disable sonarjs/no-ignored-exceptions */
 import { execSync } from 'child_process';
+import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs';
+const argv = /** @type {Record<string, any>} */ (yargs(hideBin(process.argv)).argv);
+
+export { argv };
 
 /**
  * Stops processes listening on the given port using `npx kill-port`.
