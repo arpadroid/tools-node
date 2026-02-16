@@ -47,6 +47,9 @@
     "dependencies": {
         "http": "^0.0.1-security"
     },
+    "peerDependencies": {
+        "@arpadroid/logger": "file:../logger"
+    },
     "devDependencies": {
         "jest-junit": "^16.0.0",
         "@babel/preset-env": "^7.23.9",
