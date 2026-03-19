@@ -18,17 +18,17 @@
         "LICENSE"
     ],
     "engines": {
-        "node": ">=18.0.0",
-        "npm": ">=9.0.0"
+        "node": ">=20.19.0",
+        "npm": ">=10.0.0"
     },
     "scripts": {
         "clean:install": "npm run clean && npm install",
         "clean": "rm -rf ./dist ./node_modules package-lock.json",
         "lint": "eslint src/**/*.{js,mjs}",
         "prepublishOnly": "npm run test && npm run lint && npm run build",
-        "test:coverage": "jest --coverage",
-        "test:watch": "jest --watch",
-        "test": "jest",
+        "test:coverage": "npm run test -- --coverage",
+        "test:watch": "npm run test -- --watch",
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
         "build": "tsc"
     },
     "repository": {
@@ -54,20 +54,18 @@
         "@arpadroid/logger": "file:../logger"
     },
     "devDependencies": {
+        "@arpadroid/logger": "file:../logger",
         "@babel/preset-env": "^7.23.9",
-        "@eslint/js": "^9.39.1",
+        "@eslint/js": "^10.0.1",
         "@jest/globals": "^30.2.0",
         "@types/jest": "^30.0.0",
         "@types/node": "^25.0.1",
         "babel-jest": "^30.2.0",
-        "eslint": "^9.39.1",
+        "babel-plugin-transform-import-meta": "^2.3.3",
+        "eslint": "^10.0.3",
         "globals": "^17.0.0",
         "jest": "^30.2.0",
         "prettier": "^3.7.4",
         "typescript": "^5.9.3"
-    },
-    "overrides": {
-        "minimatch": "10.2.1",
-        "ajv": "8.18.0"
     }
 }

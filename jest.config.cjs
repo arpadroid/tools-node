@@ -1,3 +1,5 @@
+const useImportMetaTransform = !process.execArgv.includes('--experimental-vm-modules');
+
 module.exports = {
     verbose: true,
     coverageReporters: ['html', 'text', 'cobertura'],
@@ -11,7 +13,13 @@ module.exports = {
     moduleFileExtensions: ['js', 'mjs'],
     setupFilesAfterEnv: ['<rootDir>/test/setupTests.cjs'],
     transform: {
-        '^.+\\.m?js$': ['babel-jest', { presets: [['@babel/preset-env', { targets: { node: 'current' } }]] }]
+        '^.+\.m?js$': [
+            'babel-jest',
+            {
+                presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
+                plugins: useImportMetaTransform ? ['babel-plugin-transform-import-meta'] : []
+            }
+        ]
     },
     fakeTimers: { enableGlobally: true },
     injectGlobals: true,

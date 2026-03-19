@@ -2,8 +2,8 @@ import { existsSync } from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-export const __filename = fileURLToPath(import.meta.url);
-export const __dirname = dirname(__filename);
+export const fileName = fileURLToPath(import.meta.url);
+export const dirName = dirname(fileName);
 
 /**
  * Find the first existing location from a list of possible locations.
